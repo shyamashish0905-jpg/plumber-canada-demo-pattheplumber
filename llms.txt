@@ -1,0 +1,30 @@
+# PatThePlumber
+
+> Licensed plumber serving Toronto and the GTA. Straight talk, clean water, and a clear next step. Contact: pattheplumber94@gmail.com.
+
+PatThePlumber is a licensed plumbing business in Toronto, Ontario, Canada. The website covers common plumbing services, a placeholder price board, the Toronto and GTA service area, review policy, guarantees, licence details and a photo quote form.
+
+## Key facts
+
+- Business name: PatThePlumber
+- Trade: Licensed plumber
+- Service area: Toronto and the GTA, including Etobicoke, North York, Scarborough, Mississauga, Brampton, Vaughan, Markham, Richmond Hill and Oakville
+- Contact email: pattheplumber94@gmail.com
+- Phone: placeholder (XXX) XXX-XXXX — not yet supplied
+- Hours: placeholder — not yet supplied
+- Licence number: placeholder PL._____ — not yet supplied
+- Prices, arrival windows, guarantees, warranty terms and reviews: placeholders until Pat confirms them
+
+## Pages
+
+- [Home](https://example.com/): Licensed plumber in Toronto and the GTA.
+- [Services & prices](https://example.com/services.html): Sample service list and ten-job price board with weekday and night rates.
+- [Service area](https://example.com/service-area.html): Toronto and GTA coverage, interactive map and placeholder arrival windows.
+- [Reviews](https://example.com/reviews.html): Review policy and ticket stubs waiting for real customers.
+- [Guarantees & licence](https://example.com/guarantees.html): Guarantee, warranty and licence placeholders plus what to ask before hiring.
+- [About Pat](https://example.com/about.html): Who Pat is and how the work is approached.
+- [Contact](https://example.com/contact.html): Contact details and photo quote form.
+
+## Important
+
+This is a draft website. The phone number, hours, crew names, arrival windows, service list, prices, guarantee terms, warranty terms, licence number, customer reviews and quoted/paid amounts are clearly marked placeholders. Do not treat them as confirmed business facts. Replace https://example.com with the real domain before launch.
