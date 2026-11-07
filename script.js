@@ -102,6 +102,14 @@
   const shop = { x: 555, y: 365 };
   let routeAnimation = 0;
 
+  // SVG elements do not reflect the `hidden` IDL property in Chrome, so the
+  // attribute has to be toggled directly for the map and pipe markers.
+  function setSvgHidden(element, hidden) {
+    if (!element) return;
+    if (hidden) element.setAttribute("hidden", "");
+    else element.removeAttribute("hidden");
+  }
+
   function makeRoutePath(target) {
     const midX = (shop.x + target.x) / 2 + (target.y - shop.y) * 0.12;
     const midY = (shop.y + target.y) / 2 - (target.x - shop.x) * 0.12 - 28;
@@ -114,7 +122,7 @@
     const length = path.getTotalLength();
     const start = performance.now();
 
-    routeVan.hidden = false;
+    setSvgHidden(routeVan, false);
 
     const step = (now) => {
       if (token !== routeAnimation) return;
@@ -124,7 +132,7 @@
       if (t < 1) {
         requestAnimationFrame(step);
       } else {
-        routeVan.hidden = true;
+        setSvgHidden(routeVan, true);
       }
     };
 
@@ -157,13 +165,13 @@
           routeOutline.style.strokeDashoffset = "0";
         });
         animateVanAlong(routeLine);
-      } else if (routeVan) {
-        routeVan.hidden = true;
+      } else {
+        setSvgHidden(routeVan, true);
       }
     }
 
     if (destPin) {
-      destPin.hidden = false;
+      setSvgHidden(destPin, false);
       destPin.setAttribute("transform", `translate(${target.x} ${target.y + 8})`);
     }
 
@@ -331,6 +339,14 @@
   } else {
     stamps.forEach((stamp) => stamp.classList.add("is-stamped"));
   }
+
+  // Reveal fallback: on pages that are never scrolled (full-page screenshots,
+  // print, bots) the observers never fire and sections would stay invisible.
+  // Show everything shortly after load so nothing is ever missing.
+  window.setTimeout(() => {
+    revealTargets.forEach((element) => element.classList.add("is-visible"));
+    stamps.forEach((stamp) => stamp.classList.add("is-stamped"));
+  }, 1500);
 
   const year = $("#year");
   if (year) year.textContent = String(new Date().getFullYear());
@@ -520,7 +536,7 @@
 
       if (waterHead) {
         const inFlow = progress > 0.003 && progress < 0.997;
-        waterHead.hidden = !inFlow;
+        setSvgHidden(waterHead, !inFlow);
         if (inFlow) {
           waterHead.setAttribute("transform", `translate(${point.x} ${point.y})`);
         }
